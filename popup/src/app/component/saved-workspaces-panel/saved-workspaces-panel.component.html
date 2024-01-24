@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <mat-form-field *ngIf="workspaces.length > 0" class="search-bar">
+            <mat-label>Search Workspace</mat-label>
+            <input matInput>
+        </mat-form-field>
+
+        <div style="height: 15px;" ></div>
+    </div>
+
+    <!--    <div class="scrollable-element" [ngStyle]="{'margin-top': scrollElementMarginTop}">-->
+    <div>
+        <mat-accordion>
+            <div *ngFor="let workspace of workspaces; let i = index">
+                <app-workspace-item [workspaceName]="workspace"></app-workspace-item>
+            </div>
+        </mat-accordion>
+    </div>
+
+
+</div>

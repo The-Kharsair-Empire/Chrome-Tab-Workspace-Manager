@@ -1,0 +1,12 @@
+<mat-tab-group #matTabGroup (selectedIndexChange)="onTabChanged($event)">
+    <mat-tab  label="My Workspaces">
+        <app-new-workspace-panel [activeWorkspace]="activeWorkspace"></app-new-workspace-panel>
+        <app-saved-workspaces-panel *ngIf="savedWorkspaces.length > 0" [workspaces]="savedWorkspaces"></app-saved-workspaces-panel>
+    </mat-tab>
+<!--    <mat-tab label="New Workspace">-->
+<!--        -->
+<!--    </mat-tab>-->
+    <mat-tab label="Settings">
+        <app-settings-panel></app-settings-panel>
+    </mat-tab>
+</mat-tab-group>

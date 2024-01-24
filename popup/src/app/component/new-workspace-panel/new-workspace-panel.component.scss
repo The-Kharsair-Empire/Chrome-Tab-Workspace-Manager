@@ -1,0 +1,29 @@
+.workspace-name-input {
+  align-items: center;
+  width: 70%;
+}
+
+.save-btn .close-ws-btn {
+  align-items: center;
+}
+
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card-content {
+  display: flex;
+}
+
+.opened-tab-card {
+  margin: 5px;
+}
+
+.error {
+  padding: 16px;
+  width: 335px;
+  color: red;
+  //background-color: white;
+}

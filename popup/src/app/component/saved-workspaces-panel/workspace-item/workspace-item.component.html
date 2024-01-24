@@ -1,0 +1,29 @@
+<div class="workspace-item-container">
+
+    <mat-expansion-panel (opened)="panelOpened = true"
+                            (closed)="panelOpened = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+
+            </mat-panel-title>
+            <mat-panel-description>
+                {{workspaceName}}
+            </mat-panel-description>
+
+        </mat-expansion-panel-header>
+
+        <button mat-icon-button
+                matTooltip="Delete Workspace"
+                (click)="deleteWorkspace()">
+            <mat-icon>delete</mat-icon>
+        </button>
+
+        <button mat-icon-button
+                matTooltip="Open Workspace"
+                (click)="openWorkspace()">
+            <mat-icon>launch</mat-icon>
+        </button>
+    </mat-expansion-panel>
+
+</div>
+

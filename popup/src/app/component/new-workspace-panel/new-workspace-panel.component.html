@@ -1,0 +1,68 @@
+<div>
+    <mat-card>
+        <mat-card-header>
+            <h3 *ngIf="activeWorkspace == null">
+                New Untitled Workspace
+            </h3>
+
+            <h3 *ngIf="activeWorkspace != null">
+                On Workspace: {{activeWorkspace}}
+            </h3>
+
+        </mat-card-header>
+
+        <mat-card-content *ngIf="activeWorkspace == null">
+            <mat-form-field class="workspace-name-input">
+                <mat-label>Name Workspace</mat-label>
+                <input matInput [(ngModel)]="newWorkspaceName" (input)="onNewWorkspaceNameInputContentChanged()">
+                <mat-hint *ngIf="namingErrorMsg" class="error">{{namingErrorMsg}}</mat-hint>
+
+            </mat-form-field>
+
+            <span class="spacer"></span>
+            <button mat-icon-button class="save-btn"
+                    matTooltip="Create new workspace of {{openedTabs.length}} tabs"
+                    (click)="createWorkspace()">
+                <mat-icon>save</mat-icon>
+            </button>
+
+        </mat-card-content>
+
+        <mat-card-content *ngIf="activeWorkspace != null">
+            <span class="spacer"></span>
+            <button mat-icon-button class="close-ws-btn"
+                    matTooltip="Close current workspace and start new"
+                    (click)="newWorkspace()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </mat-card-content>
+
+    </mat-card>
+
+<!--    <div style="height: 15px;" ></div>-->
+
+<!--    <mat-card class="opened-tab-card">-->
+<!--        <mat-card-header>-->
+<!--            <h3 *ngIf="activeWorkspace == null">-->
+<!--                Currently Opened Tabs-->
+<!--            </h3>-->
+
+<!--            <h3 *ngIf="activeWorkspace != null">-->
+<!--                Tabs in workspace {{activeWorkspace}}-->
+<!--            </h3>-->
+<!--        </mat-card-header>-->
+<!--    </mat-card>-->
+
+<!--    <mat-card class="opened-tab-card" *ngFor="let openedTab of openedTabs; let i = index" >-->
+<!--        <mat-card-header (click)="navigateTo(i, openedTab)">-->
+<!--            <mat-card-title> {{truncateTabTitle(openedTab.title)}} </mat-card-title>-->
+<!--            <mat-card-subtitle >{{truncateDisplayedUrl(openedTab.displayUrl)}}</mat-card-subtitle>-->
+<!--        </mat-card-header>-->
+
+<!--        <mat-card-actions align="end">-->
+<!--            <button mat-button (click)="removeTab(i, openedTab)">Close Tab</button>-->
+<!--        </mat-card-actions>-->
+
+<!--    </mat-card>-->
+
+</div>
